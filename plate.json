@@ -1,0 +1,26 @@
+{
+  
+  "plates" : [
+	{
+		"number": "H892 FKL" ,
+		"name"  : "Parth" ,
+		"phone" : "2865495636" ,
+		"city" : "Delhi" 
+	},
+
+	{
+		"number" : "HR.26.BR.9044" ,
+		"name"  : "Jaideep" ,
+		"phone" : "28611222333" ,
+		"city" : "Jaipur" 
+	},
+
+	{
+		"number" : "MHI2 DE1433" ,
+		"name"  : "Kartik" ,
+		"phone" : "839900444443" ,
+		"city" : "Mumbai" 
+	}
+   ]
+}
+

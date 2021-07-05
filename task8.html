@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KnowAboutCar.com</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@500&display=swap" rel="stylesheet">
+    <style>
+        /*CSS Reset*/
+        body {
+            font-family: 'Baloo Paaji 2', cursive;
+            margin: 0px;
+            padding: 0px;
+            background-image: url('car3_LI.jpg');
+            color: rgb(240, 190, 190);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: center;
+        }
+
+        .left {
+            position: absolute;
+            top: 5px;
+            left: 18px;
+            /* border: 2px solid red; */
+            display: inline-block;
+            width: 116px;
+            padding-bottom: 8px;
+        }
+
+        .left img {
+            width: 86px;
+            padding: 11px;
+            padding-bottom: 5px;
+        }
+
+        .left div {
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            line-height: 8px;
+            font-size: 20px;
+        }
+
+        .mid {
+            display: block;
+            width: 650px;
+            margin: 16px auto;
+            /* border: 2px solid yellow; */
+        }
+
+        .right {
+            position: absolute;
+            top: 20px;
+            right: 34px;
+            /* border: 2px solid blue; */
+            display: inline-block;
+        }
+
+        .navbar {
+            display: inline-block;
+        }
+
+        .navbar li {
+            display: inline-block;
+            font-size: 25px;
+        }
+
+        .navbar li a {
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+        }
+
+        .navbar li a:hover,
+        .navbar li a.active {
+            color: grey;
+            text-decoration: underline;
+        }
+
+        .btn {
+            margin: 0px 9px;
+            background-color: black;
+            color: white;
+            padding: 3px 14px;
+            /* border: 2px solid grey; */
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            font-family: 'Baloo Paaji 2', cursive;
+        }
+
+        .btn:hover {
+            font-family: 'Baloo Paaji 2', cursive;
+            background-color: rgb(194, 184, 184);
+        }
+
+        .container {
+            border: 2px solid white;
+            margin: 80px 570px;
+            padding: 10px 34px;
+            width: 22%;
+            border-radius: 30px;
+        }
+
+        .container label {
+            font-family: 'Baloo Paaji 2', cursive;
+            font-size: 18px;
+            font-style: italic;
+
+        }
+
+        .container input#name {
+            width: 270px;
+            border: 1px solid #ddd;
+            border-radius: 9px;
+            outline: 0;
+            padding: 7px;
+            background-color: #fff;
+            box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .container h1,
+        p {
+            text-align: center;
+        }
+
+        h1 {
+            background-color: rgb(0, 0, 0);
+            color: rgb(214, 12, 12);
+            display: inline;
+            padding: 0.1rem;
+
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function lw() {
+            var i = document.getElementById("in1").value
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "http://192.168.1.11/cgi-bin/task8.py?x=" + i, true);
+
+            xhr.send();
+
+            //output from above url
+            xhr.onload = function () {
+                var output = xhr.responseText;
+                document.getElementById("d1").innerHTML = output;
+            }
+        }
+
+    </script>
+
+    <header class="header">
+        <!--left box for logo-->
+        <div class="left">
+            <img src="logo.jfif" alt="loading..">
+            <div>KnowAboutCar.com</div>
+        </div>
+        <!--mid box for navigation-->
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Car Expert</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div id='a2' class="c1">
+                <p>
+                <h1>Car plate Detection</h1><br><br>
+
+                Enter Plate Number <input id='in1'>
+                <pre>
+                <div id='d1' class="c1">
+                    <p>output here..</p>
+                </div>
+                </pre>
+                </p>
+            </div>
+
+            <p><button onclick="lw()" class="btn"> click</button></p>
+        </div>
+    </header>
+</body>
+
+</html>
